@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Domain.Entity.Contact>
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pure CSS Table Highlight (vertical & horizontal)</title>
+
+
+
+    <link rel="stylesheet" href="~/Tabale/css/style.css">
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>FullName</th>
+                    <th>PhoneNumber </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.FullName</td>
+                        <td>@item.PhoneNumber</td>
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Domain.Entity.Person>
+
+
+<html>
+<style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: rebeccapurple;
+        color: white;
+        border: 2px solid #f44336;
+    }
+
+        .button1:hover {
+            background-color: #f44336;
+            color: white;
+        }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>person page</title>
+
+
+
+    <link rel="stylesheet" href="~/Tabale/css/style.css">
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>FullName</th>
+                    <th>The Operation </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.PersonName</td>
+
+                        <td><a href="@Url.Action("", "Contact", new { PersonId =item.Personid })" class="btn btn-warning" role="button">Contacts</a> </td>
+
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <form method="post" class="button button1" asp-controller="Regester" asp-action="SignOut">
+            <input type="submit" value="Logout" /> </form>
+    </div>
+
+</body>
+</html>
